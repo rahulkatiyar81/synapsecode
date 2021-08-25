@@ -1,0 +1,17 @@
+{
+	"name": "TestSQLScript",
+	"properties": {
+		"content": {
+			"query": "select * from \n    OPENROWSET\n        (\n        BULK 'https://synapsedl11.dfs.core.windows.net/input/EMPFile.csv',\n        FORMAT='CSV',\n        HEADER_ROW=TRUE,\n        PARSER_VERSION='2.0'\n        ) As [result]",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
